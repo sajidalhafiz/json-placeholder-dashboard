@@ -6,14 +6,19 @@ const User = ({ user }) => {
     const { id, name, phone, email } = user;
 
     return (
-        <div className='px-6 py-2 border flex justify-between items-center'>
-            <h3>{name}</h3>
-            <p>Email: {email}</p>
-            <p>Phone: {phone}</p>
-            <button className='bg-cyan-600 text-white font-bold py-2 px-4'>
-                <Link to={`/userDetail/${id}`}>Details</Link>
-            </button>
-        </div>
+        <>
+            <tr className='hover:bg-slate-300 duration-500'>
+                <th>{id}</th>
+                <td>{name}</td>
+                <td>{email}</td>
+                <td>{phone}</td>
+                <td>
+                    <button className='bg-cyan-600 hover:bg-cyan-500 duration-500 active:bg-cyan-700 active:scale-95 text-white font-bold py-2 px-4 rounded-lg uppercase'>
+                        <Link to={`/userDetail/${id}`}>Details</Link>
+                    </button>
+                </td>
+            </tr>
+        </>
     );
 };
 
