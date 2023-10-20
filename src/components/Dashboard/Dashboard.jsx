@@ -20,7 +20,7 @@ const Dashboard = () => {
                 <div className="menu p-4 w-96 min-h-full bg-cyan-950 text-slate-200 text-lg flex flex-col justify-between">
                     {/* Sidebar content here */}
                     <div>
-                        <div className='p-2 bg-white rounded-xl'>
+                        <div className='py-3 px-2 bg-white rounded-xl'>
                             <h2 className='text-2xl text-cyan-600 font-bold flex justify-between'>
                                 <span className='px-3 uppercase'>JSON Placeholder Dash</span>
                             </h2>

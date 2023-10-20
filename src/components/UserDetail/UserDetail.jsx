@@ -8,17 +8,18 @@ const UserDetail = () => {
     // console.log(userInfo)
     const { id, name, email, website, phone, username, company, address } = userInfo;
 
-    console.log(address, company)
+    // console.log(address, company)
+    const handleUserDetail = location.pathname.includes('profileEdit');
 
     return (
         <>
             <nav className='bg-cyan-800 p-4 text-center'>
                 <h2 className='text-5xl text-white'>Profile Update</h2>
             </nav>
-            <div className='text-slate-300 text-lg grid grid-cols-3 gap-8 items-start bg-cyan-800 p-10 pt-16 mx-auto mt-6 rounded-2xl w-8/12 relative'>
+            {handleUserDetail ? <Outlet/> : <div className='text-slate-300 text-lg grid grid-cols-3 gap-8 items-start bg-cyan-800 p-10 pt-16 mx-auto mt-6 rounded-2xl w-8/12 relative'>
                 <button className='absolute top-5 end-10 flex items-center border-2 gap-2 hover:text-cyan-400 duration-500 active:text-cyan-500 active:scale-95 text-white font-bold py-2 px-4 rounded-lg uppercase text-sm'>
                     <FaPenToSquare />
-                    <Link to={`/profileEdit`}>Edit</Link>
+                    <Link to={`/userDetail/${id}/profileEdit`}>Edit</Link>
                 </button>
                 <div className='flex flex-col items-center justify-center gap-8'>
                     <div className="avatar">
@@ -27,7 +28,7 @@ const UserDetail = () => {
                         </div>
                     </div>
                     <button className='bg-cyan-600 hover:bg-cyan-500 duration-500 active:bg-cyan-700 active:scale-95 text-white font-bold py-2 px-4 rounded-lg uppercase text-sm'>
-                        <Link to={`/userDetail/${id}`}>Upload Image</Link>
+                        Upload Image
                     </button>
                 </div>
                 <div className='space-y-3'>
@@ -71,7 +72,7 @@ const UserDetail = () => {
                 </div>
                 <div></div>
             </div>
-
+            }
         </>
     );
 };
